@@ -1,0 +1,167 @@
+/* style.css - Layout Original */
+
+/* Definindo variáveis para o esquema de cores */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --border-color: #bdc3c7;
+    --font-family: Arial, sans-serif;
+}
+
+/* Estilo global */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* Menu de navegação */
+nav {
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Esconder o estilo padrão do checkbox (caixinha com a seta) */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão de menu (hamburguer) */
+.menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent; /* Torna o fundo transparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilo do menu de navegação */
+#navMenu {
+    display: none;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 60px;
+    left: 0; /* Alinha o menu à esquerda */
+    background-color: var(--primary-color);
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilo do botão de fechar (×) */
+.close-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Exibir o menu e o botão de fechar quando o checkbox for marcado */
+#menu-toggle:checked ~ #navMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Exibir o botão de fechar quando o menu estiver aberto */
+#menu-toggle:checked ~ .close-icon {
+    display: block;
+}
+
+/* Esconder o botão de abrir (hamburguer) quando o menu estiver aberto */
+#menu-toggle:checked ~ .menu-icon {
+    display: none;
+}
+
+/* Formatação do conteúdo principal */
+main {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+table tr:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid var(--border-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
